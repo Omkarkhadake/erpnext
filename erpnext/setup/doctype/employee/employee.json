@@ -859,7 +859,7 @@
  "image_field": "image",
  "is_tree": 1,
  "links": [],
- "modified": "2024-04-10 12:08:08.978398",
+ "modified": "2024-04-12 20:24:26.816249",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Employee",
@@ -906,40 +906,49 @@
    "write": 1
   },
   {
-   "create": 1,
-   "delete": 1,
    "email": 1,
    "export": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "Head of Department",
-   "share": 1,
-   "write": 1
+   "share": 1
   },
   {
-   "create": 1,
-   "delete": 1,
    "email": 1,
    "export": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "Principal of Institute",
-   "share": 1,
-   "write": 1
+   "share": 1
   },
   {
-   "create": 1,
-   "delete": 1,
    "email": 1,
    "export": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "Head of Research and Development",
-   "share": 1,
-   "write": 1
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Head of Trust",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Institutional Level",
+   "share": 1
   }
  ],
  "search_fields": "employee_name",

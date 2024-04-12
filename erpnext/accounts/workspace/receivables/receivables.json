@@ -196,7 +196,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-04-01 21:42:19.304384",
+ "modified": "2024-04-12 21:03:55.096593",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Receivables",
@@ -207,7 +207,7 @@
  "quick_lists": [],
  "restrict_to_domain": "",
  "roles": [],
- "sequence_id": 6.0,
+ "sequence_id": 7.0,
  "shortcuts": [
   {
    "color": "Grey",
