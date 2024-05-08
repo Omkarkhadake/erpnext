@@ -40,7 +40,7 @@
   "reports_to",
   "column_break_18",
   "select_program",
-  "branch",
+  "role",
   "employment_details",
   "scheduled_confirmation_date",
   "column_break_32",
@@ -157,6 +157,7 @@
    "options": "Salutation"
   },
   {
+   "fetch_from": "user_id.first_name",
    "fieldname": "first_name",
    "fieldtype": "Data",
    "label": "First Name",
@@ -164,12 +165,14 @@
   },
   {
    "allow_in_quick_entry": 1,
+   "fetch_from": "user_id.middle_name",
    "fieldname": "middle_name",
    "fieldtype": "Data",
    "label": "Middle Name"
   },
   {
    "allow_in_quick_entry": 1,
+   "fetch_from": "user_id.last_name",
    "fieldname": "last_name",
    "fieldtype": "Data",
    "label": "Last Name"
@@ -370,19 +373,6 @@
    "oldfieldname": "reports_to",
    "oldfieldtype": "Link",
    "options": "Employee"
-  },
-  {
-   "fieldname": "branch",
-   "fieldtype": "Link",
-   "in_filter": 1,
-   "in_global_search": 1,
-   "in_list_view": 1,
-   "in_preview": 1,
-   "in_standard_filter": 1,
-   "label": "Branch",
-   "oldfieldname": "branch",
-   "oldfieldtype": "Link",
-   "options": "Branch"
   },
   {
    "description": "Applicable Holiday List",
@@ -850,8 +840,20 @@
   {
    "fieldname": "select_program",
    "fieldtype": "Link",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Program",
    "options": "Program"
+  },
+  {
+   "fetch_from": "user_id.role_profile_name",
+   "fieldname": "role",
+   "fieldtype": "Link",
+   "label": "Role",
+   "options": "Role Profile"
   }
  ],
  "icon": "fa fa-user",
@@ -859,7 +861,7 @@
  "image_field": "image",
  "is_tree": 1,
  "links": [],
- "modified": "2024-04-12 20:24:26.816249",
+ "modified": "2024-05-08 10:11:37.627631",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Employee",
