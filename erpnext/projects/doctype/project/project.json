@@ -68,6 +68,7 @@
   {
    "fieldname": "project_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Project Name",
    "oldfieldtype": "Data",
    "reqd": 1,
@@ -88,8 +89,7 @@
   {
    "fieldname": "project_type",
    "fieldtype": "Link",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
+   "hidden": 1,
    "label": "Project Type",
    "oldfieldname": "project_type",
    "oldfieldtype": "Data",
@@ -107,6 +107,7 @@
    "default": "Task Completion",
    "fieldname": "percent_complete_method",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "% Complete Method",
    "options": "Manual\nTask Completion\nTask Progress\nTask Weight"
   },
@@ -114,6 +115,7 @@
    "bold": 1,
    "fieldname": "percent_complete",
    "fieldtype": "Percent",
+   "hidden": 1,
    "label": "% Completed",
    "no_copy": 1,
    "read_only": 1
@@ -126,6 +128,7 @@
    "allow_in_quick_entry": 1,
    "fieldname": "project_template",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "From Template",
    "options": "Project Template",
    "set_only_once": 1
@@ -139,10 +142,9 @@
    "oldfieldtype": "Date"
   },
   {
-   "bold": 1,
    "fieldname": "expected_end_date",
    "fieldtype": "Date",
-   "in_list_view": 1,
+   "hidden": 1,
    "label": "Expected End Date",
    "oldfieldname": "completion_date",
    "oldfieldtype": "Date"
@@ -150,6 +152,7 @@
   {
    "fieldname": "priority",
    "fieldtype": "Select",
+   "hidden": 1,
    "in_standard_filter": 1,
    "label": "Priority",
    "oldfieldname": "priority",
@@ -159,6 +162,7 @@
   {
    "fieldname": "department",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Department",
    "options": "Department"
   },
@@ -166,6 +170,7 @@
    "collapsible": 1,
    "fieldname": "customer_details",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Customer Details",
    "oldfieldtype": "Section Break",
    "options": "fa fa-user"
@@ -195,6 +200,7 @@
    "collapsible": 1,
    "fieldname": "users_section",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Users"
   },
   {
@@ -215,6 +221,7 @@
    "collapsible": 1,
    "fieldname": "section_break0",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Notes",
    "oldfieldtype": "Section Break",
    "options": "fa fa-list"
@@ -230,6 +237,7 @@
    "collapsible": 1,
    "fieldname": "section_break_18",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Start and End Dates"
   },
   {
@@ -260,6 +268,7 @@
    "collapsible": 1,
    "fieldname": "project_details",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Costing and Billing",
    "oldfieldtype": "Section Break",
    "options": "fa fa-money"
@@ -267,7 +276,6 @@
   {
    "fieldname": "estimated_costing",
    "fieldtype": "Currency",
-   "in_list_view": 1,
    "label": "Estimated Cost",
    "oldfieldname": "project_value",
    "oldfieldtype": "Currency",
@@ -331,6 +339,7 @@
    "collapsible": 1,
    "fieldname": "margin",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Margin",
    "oldfieldtype": "Column Break",
    "width": "50%"
@@ -360,6 +369,7 @@
    "collapsible": 1,
    "fieldname": "monitor_progress",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Monitor Progress"
   },
   {
@@ -454,7 +464,7 @@
  "index_web_pages_for_search": 1,
  "links": [],
  "max_attachments": 4,
- "modified": "2024-01-08 16:01:34.598258",
+ "modified": "2024-05-28 09:21:59.383727",
  "modified_by": "Administrator",
  "module": "Projects",
  "name": "Project",

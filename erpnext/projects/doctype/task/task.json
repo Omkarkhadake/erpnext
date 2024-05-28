@@ -7,8 +7,13 @@
  "document_type": "Setup",
  "engine": "InnoDB",
  "field_order": [
+  "task_management_section",
   "subject",
   "project",
+  "regulating_authority",
+  "task_category",
+  "task_sub_category",
+  "task_frequency",
   "issue",
   "type",
   "color",
@@ -22,10 +27,12 @@
   "completed_by",
   "completed_on",
   "sb_timeline",
+  "alert_notification_date",
   "exp_start_date",
   "expected_time",
   "start",
   "column_break_11",
+  "task_due_date",
   "exp_end_date",
   "progress",
   "duration",
@@ -59,16 +66,18 @@
   {
    "allow_in_quick_entry": 1,
    "fieldname": "subject",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "in_global_search": 1,
    "in_standard_filter": 1,
-   "label": "Subject",
+   "label": "Entity Code",
+   "options": "Project",
    "reqd": 1,
    "search_index": 1
   },
   {
    "allow_in_quick_entry": 1,
    "bold": 1,
+   "fetch_from": "subject.project_name",
    "fieldname": "project",
    "fieldtype": "Link",
    "in_global_search": 1,
@@ -78,18 +87,21 @@
    "oldfieldname": "project",
    "oldfieldtype": "Link",
    "options": "Project",
+   "read_only": 1,
    "remember_last_selected_value": 1,
    "search_index": 1
   },
   {
    "fieldname": "issue",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Issue",
    "options": "Issue"
   },
   {
    "fieldname": "type",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Type",
    "options": "Task Type"
   },
@@ -98,6 +110,7 @@
    "default": "0",
    "fieldname": "is_group",
    "fieldtype": "Check",
+   "hidden": 1,
    "in_list_view": 1,
    "label": "Is Group"
   },
@@ -134,12 +147,14 @@
   {
    "fieldname": "color",
    "fieldtype": "Color",
+   "hidden": 1,
    "label": "Color"
   },
   {
    "bold": 1,
    "fieldname": "parent_task",
    "fieldtype": "Link",
+   "hidden": 1,
    "ignore_user_permissions": 1,
    "label": "Parent Task",
    "options": "Task",
@@ -164,6 +179,7 @@
    "default": "0",
    "fieldname": "expected_time",
    "fieldtype": "Float",
+   "hidden": 1,
    "label": "Expected Time (in hours)",
    "oldfieldname": "exp_total_hrs",
    "oldfieldtype": "Data"
@@ -172,6 +188,7 @@
    "fetch_from": "type.weight",
    "fieldname": "task_weight",
    "fieldtype": "Float",
+   "hidden": 1,
    "label": "Weight"
   },
   {
@@ -190,6 +207,7 @@
   {
    "fieldname": "progress",
    "fieldtype": "Percent",
+   "hidden": 1,
    "label": "% Progress",
    "no_copy": 1
   },
@@ -197,10 +215,12 @@
    "default": "0",
    "fieldname": "is_milestone",
    "fieldtype": "Check",
+   "hidden": 1,
    "in_list_view": 1,
    "label": "Is Milestone"
   },
   {
+   "collapsible": 1,
    "fieldname": "sb_details",
    "fieldtype": "Section Break",
    "label": "Details",
@@ -218,6 +238,7 @@
   {
    "fieldname": "sb_depends_on",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Dependencies",
    "oldfieldtype": "Section Break"
   },
@@ -237,6 +258,7 @@
   {
    "fieldname": "sb_actual",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "oldfieldtype": "Column Break",
    "print_width": "50%",
    "width": "50%"
@@ -271,6 +293,7 @@
    "collapsible": 1,
    "fieldname": "sb_costing",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Costing"
   },
   {
@@ -296,6 +319,7 @@
    "collapsible": 1,
    "fieldname": "sb_more_info",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "More Info"
   },
   {
@@ -366,6 +390,7 @@
    "default": "0",
    "fieldname": "is_template",
    "fieldtype": "Check",
+   "hidden": 1,
    "label": "Is Template"
   },
   {
@@ -392,6 +417,51 @@
    "fieldtype": "Data",
    "hidden": 1,
    "label": "Template Task"
+  },
+  {
+   "fieldname": "task_management_section",
+   "fieldtype": "Section Break",
+   "label": "Task Management "
+  },
+  {
+   "fieldname": "regulating_authority",
+   "fieldtype": "Link",
+   "label": "Regulating Authority",
+   "options": "Regulating Authority",
+   "search_index": 1
+  },
+  {
+   "fieldname": "task_category",
+   "fieldtype": "Link",
+   "label": "Task Category",
+   "options": "Task Category"
+  },
+  {
+   "fieldname": "task_sub_category",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Task SubCategory ",
+   "options": "Task Sub Category"
+  },
+  {
+   "fieldname": "task_frequency",
+   "fieldtype": "Select",
+   "label": "Task Frequency",
+   "options": "\nOne-time\nYearly\nHalf-yearly\nQuarterly\nBi-monthly\nMonthly\nFortnightly\nWeekly\nDaily"
+  },
+  {
+   "fieldname": "alert_notification_date",
+   "fieldtype": "Date",
+   "label": "Alert Notification Date"
+  },
+  {
+   "fieldname": "task_due_date",
+   "fieldtype": "Date",
+   "label": "Task Due Date"
   }
  ],
  "icon": "fa fa-check",
@@ -399,7 +469,7 @@
  "is_tree": 1,
  "links": [],
  "max_attachments": 5,
- "modified": "2024-01-08 16:00:41.296203",
+ "modified": "2024-05-28 09:55:59.921296",
  "modified_by": "Administrator",
  "module": "Projects",
  "name": "Task",

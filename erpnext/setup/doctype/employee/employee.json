@@ -74,6 +74,7 @@
   "attendance_device_id",
   "column_break_44",
   "holiday_list",
+  "approving_authority",
   "salary_information",
   "ctc",
   "salary_currency",
@@ -854,6 +855,12 @@
    "fieldtype": "Link",
    "label": "Role",
    "options": "Role Profile"
+  },
+  {
+   "fieldname": "approving_authority",
+   "fieldtype": "Link",
+   "label": "Approving Authority",
+   "options": "Employee"
   }
  ],
  "icon": "fa fa-user",
@@ -861,7 +868,7 @@
  "image_field": "image",
  "is_tree": 1,
  "links": [],
- "modified": "2024-05-08 10:11:37.627631",
+ "modified": "2024-05-24 12:41:34.829824",
  "modified_by": "Administrator",
  "module": "Setup",
  "name": "Employee",
